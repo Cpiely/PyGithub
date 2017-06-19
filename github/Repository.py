@@ -1980,7 +1980,7 @@ class Repository(github.GithubObject.CompletableGithubObject):
             return [
                 github.StatsContributor.StatsContributor(self._requester, headers, attributes, completed=True)
                 for attributes in data
-            ]
+            ], headers['status']
 
     def get_stats_commit_activity(self):
         """
