@@ -1975,7 +1975,7 @@ class Repository(github.GithubObject.CompletableGithubObject):
             self.url + "/stats/contributors"
         )
         if not data:
-            return None
+            return None, headers['status']
         else:
             return [
                 github.StatsContributor.StatsContributor(self._requester, headers, attributes, completed=True)
